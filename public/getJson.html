@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>jsonp test</title>
+		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>		
+		<script type="text/javascript">
+            $(function(){               
+                $('#select_link').click(function(e){
+                    e.preventDefault();
+                    console.log('select_link clicked');
+                    /*
+                    $.getJSON( "youbike.json", function( json ) {
+                        console.log( "JSON Data: " + json.retCode);
+                    }); */      
+                            
+                    $.ajax({
+                        type: 'GET',
+                        dataType: "json",
+                        url: "youbike.json",
+                        success: function(data) {
+                            console.log('success');
+                            $.each(data.retVal, function(i, item) {
+                                
+                                console.log(item[i]);
+
+                                console.log(data.retVal[i].tot);
+                            });
+
+                            //  if (res.redirect) {
+                            //     document.location.href = res.redirect;
+                            // }
+                        }
+                    });
+                    /*$.ajax('http://localhost:3000/endpoint', {
+                            type: 'POST',
+                            data: JSON.stringify(data),
+                            contentType: 'application/json',
+                            success: function() { console.log('success');},
+                            error  : function() { console.log('error');}
+                    });*/
+                });             
+            });
+        </script>
+    </head>
+    <body>
+        <div id="select_div"><a href="#" id="select_link">Test</a></div>    
+    </body>
+</html>

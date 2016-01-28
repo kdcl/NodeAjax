@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* Map */ 
+#map { 
+    width:700px; 
+    height:400px; 
+} 
+/* Info window size (optional) */ 
+.gomapMarker { 
+    display: block; 
+    width: 150px; 
+    height: auto; 
+} 
